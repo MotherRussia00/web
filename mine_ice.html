@@ -1,4 +1,4 @@
-<html lang="en" data-lt-installed="true">
+﻿<html lang="en" data-lt-installed="true">
 <style>
     @font-face {
         font-family: 'Minecraft';
@@ -72,7 +72,31 @@
         font-family: 'Minecraft';
     }
 
+    .server-block {
+        background-color: #42aaff;
+        font-family: Minecraft, serif;
+        border-radius: 30px;
+        border: 2px solid #FFB542;
+        padding: 10px 10px 10px 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        align-content: center;
+        opacity: .7;
+    }
 
+    .server-param-block {
+        width: 10%;
+        height: 10%;
+        display: inline-block;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .server-param-block p {
+        text-align: center;
+        color: #FFB542;
+        font-size: xx-large;
+    }
 </style>
 <body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMS45LjA0Iiwic2NvcmUiOjEwOTA0fV0="
       data-new-gr-c-s-check-loaded="14.1094.0" data-gr-ext-installed="" class="vsc-initialized"
@@ -123,7 +147,20 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
     const box = document.querySelector('.maintext');
-    const texts = ["<div style='color: #ffb542;font-size: 45px;line-height: 62px;display: inline-block;'>MineIce это </div><div style='display: inline-block;color: #ffb542;font-size: 45px;letter-spacing: 12px;'>...</div><div>сервак без правил, вайпов и лицензии</div>", "<div>456453234224</div>"];
+    const texts = ["<div style='color: #ffb542;font-size: 45px;line-height: 62px;display: inline-block;'>MineIce это </div><div style='display: inline-block;color: #ffb542;font-size: 45px;letter-spacing: 12px;'>...</div><div>сервак без правил, вайпов и лицензии</div>", "<div class=\"server-block\">\n" +
+    "    <div class=\"server-param-block\">\n" +
+    "        <img src=\"src/img/memory-solid.svg\" alt=\"16 ГБ\">\n" +
+    "        <p>16 ГБ</p>\n" +
+    "    </div>\n" +
+    "    <div class=\"server-param-block\">\n" +
+    "        <img src=\"src/img/microchip-solid.svg\" alt=\"I7 8700k\">\n" +
+    "        <p>I7 8700k</p>\n" +
+    "    </div>\n" +
+    "    <div class=\"server-param-block\">\n" +
+    "        <img src=\"src/img/hard-drive-solid.svg\" alt=\"1 ТБ\">\n" +
+    "        <p>1 ТБ</p>\n" +
+    "    </div>\n" +
+    "</div>"];
     var scrollPos = 0;
     var slide_number = 0;
     var every_ten = 0;
@@ -143,7 +180,7 @@
                 }
             }
             box.innerHTML = texts[slide_number];
-            box.scrollIntoView();
+            // box.scrollIntoView();
 
 
         } else {
@@ -158,7 +195,7 @@
                 slide_number = 0;
             }
             box.innerHTML = texts[slide_number];
-            box.scrollIntoView();
+            // box.scrollIntoView();
 
         }
         scrollPos = st;
