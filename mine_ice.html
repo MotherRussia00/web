@@ -1,0 +1,167 @@
+<html lang="en" data-lt-installed="true"><script>
+</script></head>
+<style>
+    @font-face {
+  font-family: 'Minecraft';
+  src: url(../src/fonts/Minecraft_Rus/minecraft.ttf);
+  font-weight: normal; 
+  font-style: normal; 
+}
+    body {
+        background-image: url(../src/bg.png);
+        background-attachment: fixed;
+  
+  /* Add the blur effect */
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+    padding: 0;
+    }
+    html, body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #42aaff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #FFB542;
+}
+
+.navbar a:hover {
+  background: #42aaff;
+  color: #FFB542;
+}
+.logo{
+    overflow: hidden;
+  background-color: #333;
+  top: 0;
+  float: left;
+  
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.mineice{
+    font-family: 'Minecraft';
+}
+
+
+</style>
+<body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMS45LjA0Iiwic2NvcmUiOjEwOTA0fV0=" data-new-gr-c-s-check-loaded="14.1094.0" data-gr-ext-installed="" class="vsc-initialized" cz-shortcut-listen="true">
+    <div class="bg-image"></div>
+    <div class="navbar">
+        <div class = "logo">
+            <p class = "mineice"style="display: inline;color:#FFB542;font-family: 'Minecraft';">
+            MineIce
+            </p>
+        </div>
+        <div style="display: flex;padding-left: 87%;padding-right: 0;"><a style="left: auto;
+            right: 10px;
+            
+            border: 1px solid #FFB542;
+            border-radius: 10px;" href="#home"><div style="font-family: 'Minecraft';">Донат</div></a></div>
+            
+        
+       
+      </div>
+      <div class="maintext" style="margin-left: auto;margin-right: auto;width: fit-content;padding-top: 29%;color: #42AAFF;font-size: 28px;font-family: 'Minecraft';">
+        <div style="
+        color: #ffb542;
+        font-size: 45px;
+        line-height: 62px;
+        display: inline-block;
+    ">
+            MineIce это 
+        </div>
+        <div style="
+        display: inline-block;
+        color: #ffb542;
+        font-size: 45px;
+        letter-spacing: 12px;
+        ">
+            ...
+        </div>
+        <div>
+        
+            сервак без правил, вайпов и лицензии
+        </div>
+      </div>
+      <div style="padding-top:1000px">
+        123
+      </div>
+      
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
+    const box = document.querySelector('.maintext');
+    const texts = ["<div style='color: #ffb542;font-size: 45px;line-height: 62px;display: inline-block;'>MineIce это </div><div style='display: inline-block;color: #ffb542;font-size: 45px;letter-spacing: 12px;'>...</div><div>сервак без правил, вайпов и лицензии</div>","<div>456453234224</div>"];
+var scrollPos = 0;
+var slide_number = 0;
+var every_ten = 0;
+$(window).scroll(function(){
+   var st = $(this).scrollTop();
+   if (st > scrollPos){
+     console.log("down");
+     console.log(every_ten);
+     if (slide_number>= texts.length-1){
+        slide_number = texts.length-1;
+
+     }else{
+        every_ten += 1;
+        if (every_ten == 20){
+        slide_number += 1;
+        every_ten = 0;
+     }
+     }
+     box.innerHTML = texts[slide_number];
+     box.scrollIntoView();
+     
+    
+    
+
+     
+     
+   } else {
+     console.log("up");
+     console.log(every_ten);
+     every_ten -= 1;
+     if (every_ten == -20){
+        slide_number -= 1;
+        every_ten = 0;
+     }
+     if (slide_number< texts.length){
+        slide_number = 0;
+     }
+     box.innerHTML = texts[slide_number];
+     box.scrollIntoView();
+     
+   }
+   scrollPos = st;
+});
+  </script>
+  
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
