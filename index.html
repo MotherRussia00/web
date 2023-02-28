@@ -1,55 +1,81 @@
-﻿<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="src/css/style.css">
-    <title>MineIce</title>
-</head>
-<div class="bg-image"></div>
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MineIce</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="src/css/style.css" />
+        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+        <script src="index.js" async></script>
+    </head>
 
-<nav class="navbar">
-    <div class="logo">
-        <p class="mineice">MineIce</p>
-    </div>
-    <div class="donate-btn">
-        <a href=""><div>Донат</div></a>
-    </div>
-</nav>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <p class="primary-text">MineIce</p>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#description">Описание</a></li>
+                    <li><a href="#ip">Играть</a></li>
+                </ul>
+            </nav>
+            <div class="button" id="donate">
+                <a href=""><div>Донат</div></a>
+            </div>
+        </div>
 
-<div class="main-text">
-    <div class="mineice-text">MineIce это</div>
-    <div class="points">...</div>
-    <div>сервер без правил, вайпов и лицензии</div>
-</div>
+        <div class="page-content">
+            <div class="mineice-text animated-text" id="description">
+                <h1>
+                    MineIce это <span class="points"> ...</span><br />
+                    <span class="smaller-text"
+                        >сервер без правил, вайпов и лицензии</span
+                    >
+                </h1>
+            </div>
+            <div class="block animated-text">
+                <div>небольшой вступительный текст...</div>
+            </div>
+            <div id="ip" class="block animated-text">
+                <div class="ip-address">
+                    mineice.ru:25565
+                </div>
+                <div class="button" id="copy-ip-btn">
+                    <a href="">Скопировать</a>
+                </div>
+            </div>
+            <h2 class="animated-text">Скриншоты сервера</h2>
 
-<div class="server-block">
-    <div class="server-param-block">
-        <img src="src/img/memory-solid.svg" alt="16 ГБ">
-        <p>16 ГБ</p>
-    </div>
-    <div class="server-param-block">
-        <img src="src/img/microchip-solid.svg" alt="I7 8700k">
-        <p>I7 8700k</p>
-    </div>
-    <div class="server-param-block">
-        <img src="src/img/hard-drive-solid.svg" alt="1 ТБ">
-        <p>1 ТБ</p>
-    </div>
-</div>
+            <h2 class="animated-text">Характеристики хоста</h2>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <div class="hardware">
+                <div class="block animated-text">
+                    <img src="/src/img/microchip-solid.svg" />
+                    <div>
+                        <div>Процессор</div>
+                        <h2>Intel i7 8700k</h2>
+                    </div>
+                </div>
 
-<script>
-    const box = document.querySelector('.maintext');
-    let scrollIndex = 0;
-    const indexes = [".about-block", ".server-block"]
+                <div class="block animated-text">
+                    <img src="/src/img/memory-solid.svg" />
+                    <div>
+                        <div>Оперативка</div>
+                        <h2>16GB</h2>
+                    </div>
+                </div>
 
-    function main() {
-        if (scrollIndex + 1 < indexes) {
-            $(indexes[scrollIndex]).css("opacity", "0")
-            $(indexes[scrollIndex + 1]).css("opacity", "1")
-            scrollIndex++;
-        }
-    }
-
-    $(window).scroll(() => main());
-</script>
-
+                <div class="block animated-text">
+                    <img src="/src/img/hard-drive-solid.svg" />
+                    <div>
+                        <div>SSD</div>
+                        <h2>1TB</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
