@@ -107,7 +107,7 @@ nav li:hover a {
     margin-right: .5%;
 }
 
-.button a {
+.button a, button {
     transition-property: color, background-color;
     transition-duration: 300ms;
     display: block;
@@ -123,7 +123,7 @@ nav li:hover a {
     background-color: #FFB542;
 }
 
-.button a:hover {
+.button a:hover, button:hover {
     background: #42aaff;
     color: #FFB542;
 }
