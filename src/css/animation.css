@@ -1,0 +1,10 @@
+.animation-left {
+    transition: 1s;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.animation-center {
+    opacity: 1;
+    transform: translateX(0);
+}
