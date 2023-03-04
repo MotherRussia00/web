@@ -131,21 +131,17 @@ nav li:hover a {
 }
 
 .page-content h1 {
-    font-size: 45px;
+    font-size: 2em;
+    margin-top: 50px;
 }
 
 .page-content h2 {
-    font-size: 28px;
+    font-size: 1.3em;
 }
 
 h1, h2 {
     margin-top: 1em;
     color: #ffb542;
-}
-
-.mineice-text {
-    margin-top: 200px;
-    display: inline-block;
 }
 
 .points {
@@ -157,37 +153,8 @@ h1, h2 {
     font-size: 0.6em;
 }
 
-#ip {
-    width: auto;
-}
-
 p {
     margin-bottom: .7em;
-}
-
-.ip-address {
-    display: inline-block;
-    border: 5px solid #000000;
-    border-radius: 0.5em;
-    padding: 0.3em;
-    background-color: #f2f2f2;
-}
-
-.hardware {
-    display: flex;
-    flex-direction: row;
-    padding: .5em;
-    gap: 2em;
-}
-
-.hardware .block {
-    height: 180px;
-}
-
-.hardware .block div {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
 }
 
 .block {
@@ -204,26 +171,12 @@ p {
     height: 100%;
 }
 
-.social-block {
-    display: flex;
-    flex-direction: row;
-}
-
-.social-discord {
-    background: #7289DA;
-    color: #fff;
-}
-
 a {
     text-decoration: none;
     color: unset;
 }
 
 @media screen and (max-width: 600px) {
-    nav ul {
-        display: none;
-    }
-
     .page-content h1 {
         font-size: 28px;
     }
@@ -234,13 +187,5 @@ a {
 
     .page-content {
         font-size: 14px;
-    }
-
-    .social-block {
-        flex-direction: column;
-    }
-
-    .hardware {
-        flex-direction: column;
     }
 }

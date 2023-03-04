@@ -1,0 +1,58 @@
+.mineice-text {
+    margin-top: 150px;
+    display: inline-block;
+}
+
+#ip {
+    width: auto;
+}
+
+
+.ip-address {
+    display: inline-block;
+    border: 5px solid #000000;
+    border-radius: 0.5em;
+    padding: 0.3em;
+    background-color: #f2f2f2;
+}
+
+.hardware {
+    display: flex;
+    flex-direction: row;
+    padding: .5em;
+    gap: 2em;
+}
+
+.hardware .block {
+    height: 180px;
+}
+
+.hardware .block div {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.social-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-discord {
+    background: #7289DA;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+    }
+
+    .social-block {
+        flex-direction: column;
+    }
+
+    .hardware {
+        flex-direction: column;
+    }
+}
