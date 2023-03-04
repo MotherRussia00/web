@@ -5,11 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>MineIce</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="/src/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="/src/css/animation.css" />
-        <link rel="stylesheet" href="/fontawesome/css/all.css" />
-        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
-        <script src="index.js" async></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}" />
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </head>
 
     <body>
@@ -26,7 +25,7 @@
                 </ul>
             </nav>
             <div class="button" id="donate">
-                <a href=""><div>Донат</div></a>
+                <a href="/donate"><div>Донат</div></a>
             </div>
         </div>
 
@@ -74,7 +73,7 @@
             </div>
             <div class="hardware animation-trigger">
                 <div class="block animation-left">
-                    <img src="/fontawesome/svgs/solid/microchip.svg" alt="cpu"/>
+                    <img src="/static/fontawesome/svgs/solid/microchip.svg" alt="cpu"/>
                     <div>
                         <div>Процессор</div>
                         <h2>Intel i7 8700k</h2>
@@ -82,7 +81,7 @@
                 </div>
 
                 <div class="block animation-left">
-                    <img src="/fontawesome/svgs/solid/memory.svg" alt="ram"/>
+                    <img src="/static/fontawesome/svgs/solid/memory.svg" alt="ram"/>
                     <div>
                         <div>Оперативка</div>
                         <h2>16GB</h2>
@@ -90,7 +89,7 @@
                 </div>
 
                 <div class="block animation-left">
-                    <img src="/fontawesome/svgs/solid/hard-drive.svg" alt="ssd"/>
+                    <img src="/static/fontawesome/svgs/solid/hard-drive.svg" alt="ssd"/>
                     <div>
                         <div>SSD</div>
                         <h2>1TB</h2>
@@ -99,7 +98,7 @@
             </div>
             
             <div id="social" class="animation-trigger">
-                <h2 class="animation-left">Наши соцсети<h2>
+                <h2 class="animation-left">Наши соцсети</h2>
             </div>
 
             <div id="social-block" class="animation-trigger">
@@ -109,4 +108,5 @@
             </div>
         </div>
     </body>
+
 </html>
