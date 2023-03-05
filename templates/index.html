@@ -1,114 +1,116 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>MineIce</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
-        <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>MineIce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}"/>
+    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
 
-    <body>
-        <div class="header">
-            <div class="logo">
-                <p class="primary-text">MineIce</p>
+<body>
+<div class="header">
+    <div class="logo">
+        <p class="primary-text">MineIce</p>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#description">Описание</a></li>
+            <li><a href="#address">Играть</a></li>
+            <li><a href="#social">Соцсети</a></li>
+        </ul>
+    </nav>
+    <div class="button" id="donate">
+        <a href="/donate">
+            <div>Донат</div>
+        </a>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="animation-trigger">
+        <div class="mineice-text animation-left" id="description">
+            <h1>
+                MineIce это <span class="points"> ...</span><br/>
+                <span class="smaller-text"
+                >сервер без правил, вайпов и лицензии</span
+                >
+            </h1>
+        </div>
+    </div>
+    <div class="animation-trigger">
+        <div class="block animation-left">
+            <div>
+                <p>
+                    На нашем сервере нет каких либо правил, можно делать
+                    всё что пожелаешь &mdash; будь то развиваться в
+                    миллионах блоков от спавна или разносить спаун
+                    создавая визеров один за другим.
+                </p>
+                <p>Сервер работает на последней версии 1.19.3.</p>
+                <p>Мы всегда ждем новых игроков.</p>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#description">Описание</a></li>
-                    <li><a href="#address">Играть</a></li>
-                    <li><a href="#social">Соцсети</a></li>
-                </ul>
-            </nav>
-            <div class="button" id="donate">
-                <a href="/donate"><div>Донат</div></a>
+        </div>
+    </div>
+    <div id="address" class="animation-trigger">
+        <h2 class="animation-left">Наш IP</h2>
+    </div>
+    <div class="animation-trigger">
+        <div id="ip" class="block animation-left">
+            <div class="ip-address">mineice.ru:25565</div>
+            <div class="button" id="copy-ip-btn">
+                <button>Скопировать</button>
+            </div>
+        </div>
+    </div>
+    <div class="animation-trigger">
+        <h2 class="animation-left">Скриншоты сервера</h2>
+    </div>
+    <div class="animation-trigger">
+        <h2 class="animation-left">Характеристики хоста</h2>
+    </div>
+    <div class="hardware animation-trigger">
+        <div class="block animation-left">
+            <img src="/static/fontawesome/svgs/solid/microchip.svg" alt="cpu"/>
+            <div>
+                <div>Процессор</div>
+                <h2>Intel i7 8700k</h2>
             </div>
         </div>
 
-        <div class="page-content">
-            <div class="animation-trigger">
-                <div class="mineice-text animation-left" id="description">
-                    <h1>
-                        MineIce это <span class="points"> ...</span><br />
-                        <span class="smaller-text"
-                            >сервер без правил, вайпов и лицензии</span
-                        >
-                    </h1>
-                </div>
-            </div>
-            <div class="animation-trigger">
-                <div class="block animation-left">
-                    <div>
-                        <p>
-                            На нашем сервере нет каких либо правил, можно делать
-                            всё что пожелаешь &mdash; будь то развиваться в
-                            миллионах блоков от спавна или разносить спаун
-                            создавая визеров один за другим.
-                        </p>
-                        <p>Сервер работает на последней версии 1.19.3.</p>
-                        <p>Мы всегда ждем новых игроков.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="address" class="animation-trigger">
-                <h2 class="animation-left">Наш IP</h2>
-            </div>
-            <div class="animation-trigger">
-                <div id="ip" class="block animation-left">
-                    <div class="ip-address">mineice.ru:25565</div>
-                    <div class="button" id="copy-ip-btn">
-                        <button>Скопировать</button>
-                    </div>
-                </div>
-            </div>
-            <div class="animation-trigger">
-                <h2 class="animation-left">Скриншоты сервера</h2>
-            </div>
-            <div class="animation-trigger">
-                <h2 class="animation-left">Характеристики хоста</h2>
-            </div>
-            <div class="hardware animation-trigger">
-                <div class="block animation-left">
-                    <img src="/static/fontawesome/svgs/solid/microchip.svg" alt="cpu"/>
-                    <div>
-                        <div>Процессор</div>
-                        <h2>Intel i7 8700k</h2>
-                    </div>
-                </div>
-
-                <div class="block animation-left">
-                    <img src="/static/fontawesome/svgs/solid/memory.svg" alt="ram"/>
-                    <div>
-                        <div>Оперативка</div>
-                        <h2>16GB</h2>
-                    </div>
-                </div>
-
-                <div class="block animation-left">
-                    <img src="/static/fontawesome/svgs/solid/hard-drive.svg" alt="ssd"/>
-                    <div>
-                        <div>SSD</div>
-                        <h2>1TB</h2>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="social" class="animation-trigger">
-                <h2 class="animation-left">Наши соцсети</h2>
-            </div>
-
-            <div id="social-block" class="animation-trigger">
-                <div class="block animation-left social-discord">
-                    <a class="fa-brands fa-discord fa-fw fa-5x" href="https://discord.gg/sKgypSe7gW"></a>
-                </div>
+        <div class="block animation-left">
+            <img src="/static/fontawesome/svgs/solid/memory.svg" alt="ram"/>
+            <div>
+                <div>Оперативка</div>
+                <h2>16GB</h2>
             </div>
         </div>
-    </body>
+
+        <div class="block animation-left">
+            <img src="/static/fontawesome/svgs/solid/hard-drive.svg" alt="ssd"/>
+            <div>
+                <div>SSD</div>
+                <h2>1TB</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="social" class="animation-trigger">
+        <h2 class="animation-left">Наши соцсети</h2>
+    </div>
+
+    <div id="social-block" class="animation-trigger">
+        <div class="block animation-left social-discord">
+            <a class="fa-brands fa-discord fa-fw fa-5x" href="https://discord.gg/sKgypSe7gW"></a>
+        </div>
+    </div>
+</div>
+</body>
 
 </html>

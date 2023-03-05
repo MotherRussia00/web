@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 
 app = Flask(__name__, static_folder="static")
+app.config["TRAP_HTTP_EXCEPTIONS"] = True
+
+
+@app.errorhandler(Exception)
+def error_handler(error):
+    return render_template("error.html", error_code=error.code)
 
 
 @app.route("/")
