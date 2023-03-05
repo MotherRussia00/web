@@ -133,10 +133,12 @@ nav li:hover a {
 .page-content h1 {
     font-size: 2em;
     margin-top: 50px;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .page-content h2 {
     font-size: 1.3em;
+    text-shadow: 2px 2px 2px #000;
 }
 
 h1, h2 {
