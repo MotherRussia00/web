@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>MineIce - {% block title %} {% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}" />
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}" />
     {% block stylesheets %} {% endblock %}
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+
     <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
     {% block scripts %} {% endblock %}
 </head>
@@ -20,9 +23,9 @@
 <body>
     <div class="header">
         <div class="logo">
-            <p class="primary-text">MineIce</p>
+            <div class="primary-text">MineIce</div>
         </div>
-        <nav class="navbar">
+        <nav>
             {% block navbar %} {% endblock %}
         </nav>
         <div class="button" id="donate">
