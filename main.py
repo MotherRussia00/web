@@ -1,21 +1,26 @@
 from flask import Flask, render_template
 import os
 
-app = Flask(__name__, static_folder="static")
+import settings
+
+app = Flask(__name__, static_folder=settings.STATIC_FOLDER)
 app.config["TRAP_HTTP_EXCEPTIONS"] = True
+
 
 @app.errorhandler(Exception)
 def error_handler(error):
-    return render_template("error.html", error_code=error.code)
+    if hasattr(error, "code"):
+        return render_template("error.html", error_code=error.code)
+    return render_template("error.html", error_code=error)
 
 
 @app.route("/")
 def index():
-    screenshots_folder = "static/img/screenshots/"
-    files = os.listdir(screenshots_folder)
-    filter(lambda f: f.endswith(".png"), files)
-    files = [ "/" + os.path.join(screenshots_folder, f) for f in files ]
-    files.sort()
+    files = sorted(
+        "/" + os.path.join(settings.SCREENSHOTS_FOLDER, file)
+        for file in os.listdir(settings.SCREENSHOTS_FOLDER)
+        if file.endswith(".png")
+    )
     return render_template("index.html", screenshots=files)
 
 
@@ -25,4 +30,4 @@ def donate():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=settings.DEBUG)
