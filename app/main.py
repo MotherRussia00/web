@@ -30,4 +30,4 @@ def donate():
 
 
 if __name__ == '__main__':
-    app.run(debug=settings.DEBUG, port=settings.PORT)
+    app.run(debug=settings.DEBUG, port=settings.PORT, host='0.0.0.0')
