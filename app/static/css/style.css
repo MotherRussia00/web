@@ -128,8 +128,7 @@ nav li:hover a {
     color: #42AAFF;
     font-family: Minecraft, serif;
     font-size: 22px;
-    padding: 1em;
-    width: 60%;
+    padding: 10vw;
 }
 
 .page-content h1 {
