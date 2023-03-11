@@ -1,10 +1,13 @@
-.animation-left {
-    transition: 1s;
-    opacity: 0;
-    transform: translateX(-15vw);
-}
+@media screen and (min-width: 600px) {
+    
+    .animation-left {
+        transition: 1s;
+        opacity: 0;
+        transform: translateX(-15vw);
+    }
 
-.animation-center {
-    opacity: 1;
-    transform: translateX(0);
+    .animation-center {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

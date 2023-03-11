@@ -19,8 +19,12 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener("DOMContentLoaded", animation_ready);
 
 function animation_ready() {
-    const texts = document.querySelectorAll(".animation-trigger");
-    texts.forEach(text => {
-        observer.observe(text);
-    });
+    let loadAnimation = window.matchMedia("@media screen and (min-width: 600px)");
+
+    if (loadAnimation) {
+        const texts = document.querySelectorAll(".animation-trigger");
+        texts.forEach(text => {
+            observer.observe(text);
+        });
+    }
 }
