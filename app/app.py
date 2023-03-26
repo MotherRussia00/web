@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import os
+import argparse
 
 import settings
 
@@ -23,6 +24,10 @@ def index():
     )
     return render_template("index.html", screenshots=files)
 
+@app.route("/wiki")
+def wiki():
+    return render_template("wiki.html")
+
 
 @app.route("/donate")
 def donate():
@@ -30,4 +35,8 @@ def donate():
 
 
 if __name__ == '__main__':
-    app.run(debug=settings.DEBUG, port=settings.PORT, host='0.0.0.0')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--debug', action='store_true')
+    args = parser.parse_args()
+
+    app.run(debug=args.debug, port=settings.PORT, host='0.0.0.0')
