@@ -36,6 +36,8 @@ body {
 }
 
 .header {
+    z-index: 255;
+    position: sticky;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -44,7 +46,8 @@ body {
     justify-content: space-between;
     overflow: hidden;
     background-color: #333;
-    top: 0;
+    top: -1px;
+    margin-top: -1px;
     width: 100vw;
     height: 65px;
     padding: .4em 1em;
@@ -131,20 +134,23 @@ nav li:hover a {
     padding: 10vw;
 }
 
-.page-content h1 {
+h1 {
     font-size: 2em;
     margin-top: 50px;
-    text-shadow: 2px 2px 2px #000;
 }
 
-.page-content h2 {
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
     font-size: 1.3em;
-    text-shadow: 2px 2px 2px #000;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin-top: 1em;
     color: #ffb542;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .points {
@@ -177,6 +183,27 @@ p {
 a {
     text-decoration: none;
     color: unset;
+}
+
+.up-button {
+    transition: background-color 0.3s;
+    position: sticky;
+    bottom: 3em;
+    float: right;
+    right: 3em;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+
+    background: #6e6e6e65;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.up-button:hover {
+    background: #b0b0b0dd;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,0 +1,49 @@
+.plates {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+/*.plates {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    grid-auto-rows: 14em;
+    grid-gap: 1em;
+}*/
+
+.plate {
+    display: flex;
+    flex: 50% 50% 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 14em;
+}
+
+.plate img {
+    transition: all 0.3s;
+    width: 30%;
+    transform: rotate3d(0, 1, 0, 0deg);
+}
+
+.plate h3 {
+    color: black;
+    text-shadow: none;
+}
+
+.plate:hover img {
+    transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.command {
+    display: flex;
+    flex: 50% 50% 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+}

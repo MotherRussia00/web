@@ -23,9 +23,85 @@
 <div class="animation-trigger">
     <h1 id="description" class="animation-left">Wiki</h1>
 </div>
+<div class="plates">
+    <div class="animation-trigger">
+        <div class="block animation-left plate">
+            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/cube.svg') }}" alt="cube" />
+            <h3>
+                Сервер
+            </h3>
+        </div>
+    </div>
+
+    <div class="animation-trigger">
+        <div class="block animation-left plate">
+            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/fire.svg') }}" alt="cube" />
+            <h3>
+                Анархия
+            </h3>
+        </div>
+    </div>
+
+    <div class="animation-trigger">
+        <div class="block animation-left plate">
+            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/user-ninja.svg') }}" alt="cube" />
+            <h3>
+                Pvp сервер
+            </h3>
+        </div>
+    </div>
+
+    <div class="animation-trigger">
+        <div class="block animation-left plate">
+            <img src="{{ url_for('static', filename='fontawesome/svgs/brands/discord.svg') }}" alt="cube" />
+            <h3>
+                Дискорд
+            </h3>
+        </div>
+    </div>
+</div>
+<div class="animation-trigger">
+    <div class="animation-left">
+        <h2>
+            Сервер
+        </h2>
+    </div>
+</div>
 <div class="animation-trigger">
     <div class="block animation-left">
-        Команды
+        <p>
+            На нашем сервере есть несколько режимов &mdash; бла бла бла ...
+        </p>
     </div>
+</div>
+<div class="animation-trigger">
+    <div class="animation-left">
+        <h2>
+            Анархия
+        </h2>
+    </div>
+</div>
+<div class="animation-trigger">
+    <div class="block animation-left">
+        <p>
+            Анархия &mdash; это режим бла бла бла...
+        </p>
+    </div>
+</div>
+<div class="animation-trigger">
+    <div class="animation-left">
+        <h3>
+            Команды
+        </h3>
+    </div>
+</div>
+<div class="plates">
+    {% for i in range(0, 10) %}
+    <div class="animation-trigger">
+        <div class="block animation-left command">
+            /command
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
