@@ -1,0 +1,19 @@
+[
+    {
+        "type": "h1",
+        "content": "Wiki"
+    },
+    {
+        "type": "plates",
+        "content": [
+            {
+                "name": "Сервер",
+                "img": "fontawesome/svgs/solid/cube.svg"
+            }
+        ]
+    },
+    {
+        "type": "h2",
+        "content": "Сервер"
+    }
+]
