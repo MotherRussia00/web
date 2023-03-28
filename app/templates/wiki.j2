@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block sidebar %}
-<div id="sidebar" class="bg-light">
+<div id="sidebar">
     <nav id="sidebar-bootstrap" class="navbar navbar-light">
         <div class="nav nav-pills flex-column">
             {% for category in data['categories'] %}
@@ -104,30 +104,31 @@
             </h4>
 
 
-            <div class="block">
+            <div class="block flex-column">
                 <p>
                     {{ command['desc'] }}
                 </p>
-            </div>
-            <div id="{{category['id']}}_{{command['id']}}_buttons" class="anchor"></div>
+                <div id="{{category['id']}}_{{command['id']}}_buttons" class="anchor"></div>
 
-            {% for variation in command['variations'] %}
-            <section id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}_section">
-                <div id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}" class="anchor"></div>
-                <div class="block flex-column">
-                    <button class="button-text" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse" aria-expanded="false"
-                        aria-controls="{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse">
-                        {{ variation['cmd'] }}
-                    </button>
-                    <div class="collapse" id="{{ category['id'] }}_{{ command['id'] }}_v{{ loop.index }}_collapse">
-                        <p>
-                            {{ variation['desc'] }}
-                        </p>
+                {% for variation in command['variations'] %}
+                <section id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}_section">
+                    <div id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}" class="anchor"></div>
+                    <div class="flex-column">
+                        <button class="button-text" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse"
+                            aria-expanded="false"
+                            aria-controls="{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse">
+                            {{ variation['cmd'] }}
+                        </button>
+                        <div class="collapse" id="{{ category['id'] }}_{{ command['id'] }}_v{{ loop.index }}_collapse">
+                            <p>
+                                {{ variation['desc'] }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-            {% endfor %}
+                </section>
+                {% endfor %}
+            </div>
         </section>
         {% endfor %}
         {% endif %}

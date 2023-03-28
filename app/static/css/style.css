@@ -89,7 +89,7 @@ nav li:hover a {
 }
 
 .button a, button {
-    transition-property: color, background-color;
+    transition-property: color, background-color, border;
     transition-duration: 300ms;
     display: block;
     font-family: Minecraft, serif;

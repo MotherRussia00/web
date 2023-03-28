@@ -1,6 +1,12 @@
 body {
-    background: linear-gradient(90deg, #ded3c4, #e8c6e6);
+    /*background: linear-gradient(90deg, #ded3c4, #e8c6e6);*/
     margin: 0;
+
+    background-attachment: scroll;
+
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 html {
@@ -8,6 +14,7 @@ html {
 }
 
 .page-content {
+    backdrop-filter: blur(100px);
     font-size: 1.1rem;
     margin: 0;
     display: flex;
@@ -35,6 +42,7 @@ section {
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    background-color: #f6f6f6;
 }
 
 .plates {
@@ -72,4 +80,14 @@ section {
     justify-content: center;
     align-items: center;
     height: 5em;
+}
+
+button {
+    border: solid 5px #0000;
+}
+
+button:hover {
+    background: #42aaff;
+    color: #FFB542;
+    border: solid 5px #FFB542;
 }
