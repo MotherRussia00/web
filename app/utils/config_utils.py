@@ -1,5 +1,24 @@
+import io
 import json
+import yaml
+from flask import Flask, render_template
 
+data = {
+    'a list': [
+        1, 
+        42, 
+        3.141, 
+        1337, 
+        'help', 
+        u'€'
+    ],
+    'a string': 'bla',
+    'another dict': {
+        'foo': 'bar',
+        'key': 'value',
+        'the answer': 42
+    }
+}
 
 class ConfigUtils:
     @classmethod
@@ -9,3 +28,8 @@ class ConfigUtils:
         for block in info:
             if block["type"] == type_:
                 return block["content"]
+    @classmethod
+    def render_with_config(cls, template_name: str, config_filename: str):
+        with open(f"config/{config_filename}.yml", 'r') as stream:
+            data = yaml.safe_load(stream)
+        return render_template(template_name, data=data)

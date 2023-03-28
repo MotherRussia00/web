@@ -13,10 +13,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}" />
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    {% block animation_css %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}" />
+    {% endblock %}
     {% block stylesheets %} {% endblock %}
 
+    {% block animation_js %}
     <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+    {% endblock %}
     {% block scripts %} {% endblock %}
 </head>
 

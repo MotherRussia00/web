@@ -9,6 +9,8 @@
 {% block scripts %}
 {% endblock %}
 
+<!--TODO add bootstrap scroll spy -->
+
 {% block navbar %}
 <ul>
     <li><a href="/wiki">Wiki</a></li>
@@ -19,89 +21,79 @@
 </ul>
 {% endblock %}
 
+
+
 {% block content %}
-<div class="animation-trigger">
-    <h1 id="description" class="animation-left">Wiki</h1>
-</div>
+<h1 id="description">Wiki</h1>
 <div class="plates">
-    <div class="animation-trigger">
-        <div class="block animation-left plate">
-            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/cube.svg') }}" alt="cube" />
-            <h3>
-                Сервер
-            </h3>
-        </div>
-    </div>
-
-    <div class="animation-trigger">
-        <div class="block animation-left plate">
-            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/fire.svg') }}" alt="cube" />
-            <h3>
-                Анархия
-            </h3>
-        </div>
-    </div>
-
-    <div class="animation-trigger">
-        <div class="block animation-left plate">
-            <img src="{{ url_for('static', filename='fontawesome/svgs/solid/user-ninja.svg') }}" alt="cube" />
-            <h3>
-                Pvp сервер
-            </h3>
-        </div>
-    </div>
-
-    <div class="animation-trigger">
-        <div class="block animation-left plate">
-            <img src="{{ url_for('static', filename='fontawesome/svgs/brands/discord.svg') }}" alt="cube" />
-            <h3>
-                Дискорд
-            </h3>
-        </div>
-    </div>
-</div>
-<div class="animation-trigger">
-    <div class="animation-left">
-        <h2>
-            Сервер
-        </h2>
-    </div>
-</div>
-<div class="animation-trigger">
-    <div class="block animation-left">
-        <p>
-            На нашем сервере есть несколько режимов &mdash; бла бла бла ...
-        </p>
-    </div>
-</div>
-<div class="animation-trigger">
-    <div class="animation-left">
-        <h2>
-            Анархия
-        </h2>
-    </div>
-</div>
-<div class="animation-trigger">
-    <div class="block animation-left">
-        <p>
-            Анархия &mdash; это режим бла бла бла...
-        </p>
-    </div>
-</div>
-<div class="animation-trigger">
-    <div class="animation-left">
-        <h3>
-            Команды
-        </h3>
-    </div>
-</div>
-<div class="plates">
-    {% for i in range(0, 10) %}
-    <div class="animation-trigger">
-        <div class="block animation-left command">
-            /command
-        </div>
+    {% for category in data['categories'] %}
+    <div id="{{category['id']}}_plate">
+        <a href="#{{category['id']}}">
+            <div class="block plate hover-trigger">
+                <img class="rotate180y" src="{{ url_for('static', filename=category['img']) }}" alt="cube" />
+                <h3>
+                    {{ category['name'] }}
+                </h3>
+            </div>
+        </a>
     </div>
     {% endfor %}
 </div>
+{% for category in data['categories'] %}
+<div id="{{category['id']}}" class="anchor"></div>
+<h2 class="category">
+    {{ category['name'] }}
+</h2>
+<div class="block">
+    <p>
+        {{ category['desc'] }}
+    </p>
+</div>
+{% if category['hasCommands'] %}
+<h3>
+    Комманды
+</h3>
+<div class="plates">
+    {% for command in category['commands'] %}
+    <div class="block command hover-trigger" id="{{command['id']}}_button">
+        <span class="scale120">
+            {{ command['canonical'] }}
+        </span>
+    </div>
+    {% endfor %}
+</div>
+{% for command in category['commands'] %}
+
+<h2 class="category">
+    {{ command['canonical'] }}
+</h2>
+<div class="block">
+    <p>
+        {{ command['desc'] }}
+    </p>
+</div>
+
+<div class="plates category">
+    {% for variation in command['variations'] %}
+    <div class="block command hover-trigger" id="{{command['id']}}_button">
+        <span class="scale120">
+            {{ variation['cmd'] }}
+        </span>
+    </div>
+    {% endfor %}
+</div>
+
+{% for variation in command['variations'] %}
+<h2 class="category">
+    {{ variation['cmd'] }}
+</h2>
+<div class="block">
+    <p>
+        {{ variation['desc'] }}
+    </p>
+</div>
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% endfor %}
 {% endblock %}

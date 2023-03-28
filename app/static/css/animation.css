@@ -1,13 +1,25 @@
 @media screen and (min-width: 600px) {
     
     .animation-left {
-        transition: 1s;
+        transition: 0.8s;
         opacity: 0;
-        transform: translateX(-15vw);
+        transform: translateX(-5vw);
     }
 
     .animation-center {
         opacity: 1;
         transform: translateX(0);
+    }
+
+    .hover-trigger .rotate180y, .scale120 {
+        transition: transform 0.3s;
+    }
+    
+    .hover-trigger:hover .rotate180y {
+        transform: rotate3d(0, 1, 0, 180deg);
+    }
+
+    .hover-trigger:hover .scale120 {
+        transform: scale(120%);
     }
 }

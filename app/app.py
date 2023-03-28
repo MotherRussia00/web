@@ -3,6 +3,7 @@ import os
 import argparse
 
 import settings
+from utils.config_utils import ConfigUtils
 
 app = Flask(__name__, static_folder=settings.STATIC_FOLDER)
 app.config["TRAP_HTTP_EXCEPTIONS"] = True
@@ -26,7 +27,7 @@ def index():
 
 @app.route("/wiki")
 def wiki():
-    return render_template("wiki.html")
+    return ConfigUtils.render_with_config("wiki.html", "wiki")
 
 
 @app.route("/donate")
