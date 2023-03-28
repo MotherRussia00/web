@@ -13,6 +13,7 @@
 
 
 .ip-address {
+    font-family: 'Courier New', Courier, monospace;
     display: inline-block;
     border: 5px solid #000000;
     border-radius: 0.5em;

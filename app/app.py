@@ -12,8 +12,8 @@ app.config["TRAP_HTTP_EXCEPTIONS"] = True
 @app.errorhandler(Exception)
 def error_handler(error):
     if hasattr(error, "code"):
-        return render_template("error.html", error_code=error.code)
-    return render_template("error.html", error_code=error)
+        return render_template("error.j2", error_code=error.code)
+    return render_template("error.j2", error_code=error)
 
 
 @app.route("/")
@@ -23,21 +23,21 @@ def index():
         for file in os.listdir(settings.SCREENSHOTS_FOLDER)
         if file.endswith(".png")
     )
-    return render_template("index.html", screenshots=files)
+    return render_template("index.j2", screenshots=files)
 
 @app.route("/wiki")
 def wiki():
-    return ConfigUtils.render_with_config("wiki.html", "wiki")
+    return ConfigUtils.render_with_config("wiki.j2", "wiki")
 
 
 @app.route("/donate")
 def donate():
-    return render_template("donate.html")
+    return render_template("donate.j2")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug', action='store_true')
     args = parser.parse_args()
-
-    app.run(debug=args.debug, port=settings.PORT, host='0.0.0.0')
+    settings.DEBUG = args.debug
+    app.run(debug=settings.DEBUG, port=settings.PORT, host='0.0.0.0')

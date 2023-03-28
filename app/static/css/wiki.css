@@ -1,3 +1,42 @@
+body {
+    background: linear-gradient(90deg, #ded3c4, #e8c6e6);
+    margin: 0;
+}
+
+html {
+    padding: 0;
+}
+
+.page-content {
+    font-size: 1.1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.content {
+    margin: 0;
+    padding: 2em 2em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+#sidebar {
+    flex-shrink: 0;
+    position: sticky;
+    top: 64px;
+    width: 20vw;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
 .plates {
     width: 100%;
     display: flex;
@@ -5,10 +44,6 @@
     flex-direction: row;
     gap: 1em;
     justify-content: center;
-}
-
-.page-content {
-    font-size: 1rem;
 }
 
 .plate {
@@ -37,10 +72,4 @@
     justify-content: center;
     align-items: center;
     height: 5em;
-}
-
-.page-content {
-    border-radius: 2em;
-    background: linear-gradient(90deg, #ded3c4, #e8c6e6);
-    padding: 2em 2em;
 }

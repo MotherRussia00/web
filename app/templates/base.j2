@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MineIce - {% block title %} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="primary-text">MineIce</div>
+        </div>
+        <nav>
+            {% block navbar %} {% endblock %}
+        </nav>
+        <div class="button" id="donate">
+            <a href="/donate">
+                <div>Донат</div>
+            </a>
+        </div>
+    </div>
+
+    {% block body %} {% endblock %}
+</body>
+
+</html>

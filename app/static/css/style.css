@@ -9,30 +9,17 @@ ul {
     margin-bottom: 0;
 }
 
-@font-face {
-    font-family: Minecraft;
-    src: url(/static/fonts/Minecraft_Rus/minecraft.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     background-image: url(/static/img/bg.png);
     background-attachment: fixed;
-
-    /* Add the blur effect */
-    filter: blur(0.5px);
-    -webkit-filter: blur(0.5px);
-
-    /* Full height */
-    height: 100%;
 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+
+    font-family: Manrope;
+    font-weight: 500;
 }
 
 .header {
@@ -122,15 +109,15 @@ nav li:hover a {
     color: #FFB542;
 }
 
-.page-content {
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
     color: #42AAFF;
-    font-family: Minecraft, serif;
     font-size: 22px;
-    margin: 10vw;
+    margin: 5vw;
+    padding: 2em 2em;
 }
 
 h1 {
@@ -146,10 +133,36 @@ h3 {
     font-size: 1.3em;
 }
 
-h1, h2, h3 {
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 1.1em;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
     margin-top: 1em;
     color: #ffb542;
     text-shadow: 2px 2px 2px #000;
+    font-family: Minecraft, serif;
+}
+
+.tab1 {
+    margin-left: 1em;
+}
+
+.tab2 {
+    margin-left: 2em;
+}
+
+.tab3 {
+    margin-left: 3em;
 }
 
 .points {

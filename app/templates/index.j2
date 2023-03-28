@@ -1,0 +1,155 @@
+﻿{% extends 'mineice.j2' %}
+
+{% block title %} Главная {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}
+
+{% block navbar %}
+<ul>
+    <li><a href="/wiki">Wiki</a></li>
+    <li><a href="/">Главная</a></li>
+    <li><a href="#description">Описание</a></li>
+    <li><a href="#address">Играть</a></li>
+    <li><a href="#social">Соцсети</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="animation-trigger">
+    <div class="mineice-text animation-left" id="description">
+        <h1>
+            MineIce это <span class="points"> ...</span><br />
+            <span class="smaller-text">сервер без правил, вайпов и лицензии</span>
+        </h1>
+    </div>
+</div>
+
+<div class="animation-trigger">
+    <div class="block animation-left">
+        <div>
+            <p>
+                На нашем сервере нет каких либо правил, можно делать
+                всё что пожелаешь &mdash; будь то развиваться в
+                миллионах блоков от спавна или разносить спавн
+                создавая визеров один за другим.
+            </p>
+            <p>Сервер работает на последней версии 1.19.3.</p>
+            <p>Мы всегда ждем новых игроков!</p>
+        </div>
+    </div>
+</div>
+
+<div class="animation-trigger">
+    <div class="block animation-left">
+        <div>
+            <p>Нравится наш проект? Вы всегда можете поддержать сервер рублем.</p>
+            <div class="button">
+                <a href="/donate">
+                    <div>Поддержать сервер</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="address" class="animation-trigger">
+    <h2 class="animation-left">Наш IP</h2>
+</div>
+<div class="animation-trigger">
+    <div id="ip" class="block animation-left">
+        <div class="ip-address">mineice.ru:25565</div>
+        <div class="button" id="copy-ip-btn">
+            <button>Скопировать</button>
+        </div>
+    </div>
+</div>
+<div class="animation-trigger">
+    <h2 id="screenshots" class="animation-left">Скриншоты сервера</h2>
+</div>
+<div class="animation-trigger">
+    <div class="animation-left">
+        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                {% for screenshot in screenshots %}
+                {% if loop.index == 1 %}
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{ loop.index - 1 }}"
+                    class="active" aria-current="true" aria-label="Slide {{ loop.index }}"></button>
+                {% else %}
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{ loop.index - 1 }}"
+                    aria-label="Slide {{ loop.index }}"></button>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="carousel-inner">
+                {% for screenshot in screenshots %}
+                {% if loop.index == 1 %}
+                <div class="carousel-item active">
+                    <img src="{{ screenshot }}" class="d-block w-100" alt="{{ loop.index }}">
+                </div>
+                {% else %}
+                <div class="carousel-item">
+                    <img src="{{ screenshot }}" class="d-block w-100" alt="{{ loop.index }}">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="animation-trigger">
+    <h2 class="animation-left">Характеристики хоста</h2>
+</div>
+<div class="hardware animation-trigger">
+    <div class="block animation-left">
+        <img src="{{ url_for('static', filename='fontawesome/svgs/solid/microchip.svg') }}" alt="cpu" />
+        <div>
+            <div>Процессор</div>
+            <h2>Intel i7 8700k</h2>
+        </div>
+    </div>
+
+    <div class="block animation-left">
+        <img src="{{ url_for('static', filename='fontawesome/svgs/solid/memory.svg') }}" alt="ram" />
+        <div>
+            <div>Оперативка</div>
+            <h2>16GB</h2>
+        </div>
+    </div>
+
+    <div class="block animation-left">
+        <img src="{{ url_for('static', filename='fontawesome/svgs/solid/hard-drive.svg') }}" alt="ssd" />
+        <div>
+            <div>SSD</div>
+            <h2>1TB</h2>
+        </div>
+    </div>
+</div>
+
+<div id="social" class="animation-trigger">
+    <h2 class="animation-left">Наши соцсети</h2>
+</div>
+
+<div id="social-block" class="animation-trigger">
+    <a href="https://discord.gg/sKgypSe7gW">
+        <div class="block animation-left social-discord">
+            <i class="fa-brands fa-discord fa-fw fa-5x"></i>
+        </div>
+    </a>
+</div>
+{% endblock %}
