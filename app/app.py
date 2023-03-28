@@ -25,6 +25,7 @@ def index():
     )
     return render_template("index.j2", screenshots=files)
 
+
 @app.route("/wiki")
 def wiki():
     return ConfigUtils.render_with_config("wiki.j2", "wiki")

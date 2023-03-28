@@ -3,12 +3,13 @@ import yaml
 from flask import render_template
 import settings
 
+
 class ConfigUtils:
     cached = dict()
 
     @classmethod
     def load_from_config(cls, config_filename: str, type_: str):
-        with open(f"json/{config_filename}.json") as file:
+        with open(f"config/{config_filename}.json") as file:
             info = json.load(file)
         for block in info:
             if block["type"] == type_:
