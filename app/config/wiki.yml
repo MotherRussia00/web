@@ -1,0 +1,81 @@
+categories:
+  - id: server
+    name: Сервер
+    img: fontawesome/svgs/solid/cube.svg
+    desc: |
+      На нашем сервере есть несколько режимов: Анархия - полное отсутствие правил, делай что хочешь и где хочешь.
+      Пвп сервер - это сервер на котором ты можешь сразится с другими игроками в cpvp
+    hasCommands: no
+  - id: anarchy
+    name: Анархия
+    img: fontawesome/svgs/solid/fire.svg
+    desc: |
+      Анархия — полное отсутствие правил, делай что хочешь и где хочешь
+    hasCommands: yes
+    commands:
+      - id: spawn
+        desc: |
+          Телепорирует тебя на рандомные координаты в радиусе 200 блоков от спавна
+        canonical: /spawn
+      - id: tpa
+        desc: |
+          Отправить запрос на телепортацию какому - то игроку
+        canonical: /tpa <Никнейм>
+      - id: tpahere
+        desc: |
+          Отправить запрос на телепортацию какому то игроку к себе
+        canonical: /tpahere <Никнейм>
+      - id: kill
+        desc: |
+          Убивает тебя
+        canonical: /kill
+  - id: pvp
+    name: Pvp сервер
+    img: fontawesome/svgs/solid/user-ninja.svg
+    desc: |
+      Pvp — это сервер на котором ты можешь сразится с другими игроками в pvp
+    hasCommands: yes
+    commands:
+      - id: kill
+        desc: |
+          Убивает тебя
+        canonical: /kill
+        variations:
+          - cmd: /suicide
+            desc: |
+              Убивает тебя
+      - id: overworld
+        desc: |
+          Телепортирует тебя на спавн верхнего мира
+        canonical: /overworld
+      - id: nether
+        desc: |
+          Телепортирует тебя на спавн нижнего мира
+        canonical: /nether
+      - id: duel
+        desc: |
+          Команда для начала дуэли с каким либо игроком
+        canonical: /duel <Никнейм>
+  - id: discord
+    name: Дискорд
+    img: fontawesome/svgs/brands/discord.svg
+    desc: |
+      У нас есть дискорд сервер — в нем можно пообщаться с другими игроками на сервере вне зависимости их нахождения на нем и многое другое
+    hasCommands: yes
+    commands:
+      - id: minecraft
+        desc: |
+          Команда для привязки аккаунта в дискорде к майнкрафту
+        canonical: /minecraft <id>
+      - id: rank
+        desc: |
+          Ваш ранк на сервере, важно привязать дискорд
+        canonical: /rank
+        variations:
+          - cmd: /rank <Игрок>
+            desc: |
+              Узнать ранк какого либо игрока на сервере
+      - id: status
+        desc: |
+          Показывает количество игроков на сервере
+        canonical: /status

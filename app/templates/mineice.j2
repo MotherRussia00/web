@@ -1,0 +1,41 @@
+{% extends 'base.j2' %}
+
+
+{% block head %}
+<meta name="enot" content="44423156" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='fonts/fonts.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='fonts/manrope/manrope.css') }}" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.css') }}" />
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+{% block animation_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animation.css') }}" />
+{% endblock %}
+{% block stylesheets %} {% endblock %}
+
+{% block animation_js %}
+<script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+{% endblock %}
+{% block scripts %} {% endblock %}
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="page-content">
+    {% block sidebar %} {% endblock %}
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</div>
+<a href="#">
+    <div class="up-button"><i class="fa fa-solid fa-chevron-up"></i></div>
+</a>
+
+{% endblock %}

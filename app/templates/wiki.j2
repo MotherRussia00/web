@@ -1,0 +1,138 @@
+{% extends 'mineice.j2' %}
+
+{% block title %} Вики {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wiki.css') }}" />
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block navbar %}
+<ul>
+    <li><a href="/wiki">Wiki</a></li>
+    <li><a href="/">Главная</a></li>
+</ul>
+{% endblock %}
+
+{% block sidebar %}
+<div id="sidebar">
+    <nav id="sidebar-bootstrap" class="navbar navbar-light">
+        <div class="nav nav-pills flex-column">
+            {% for category in data['categories'] %}
+            <div class="nav-item">
+                <a class="nav-link" href="#{{category['id']}}_section">{{ category['name'] }}</a>
+                {% if category['hasCommands'] %}
+                <div class="nav nav-pills flex-column">
+                    {% for command in category['commands'] %}
+                    <div class="nav-item tab1">
+                        <a class="nav-link" href="#{{category['id']}}_{{command['id']}}_section">{{ command['canonical']
+                            }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </nav>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="content" data-bs-spy="scroll" data-bs-target="#sidebar-bootstrap" data-bs-offset="0" class="px-3"
+    tabindex="0">
+    <h1 id="description">Wiki</h1>
+    <div id="category_buttons" class="anchor"></div>
+    <div class="plates">
+        {% for category in data['categories'] %}
+        <div id="{{category['id']}}_plate">
+            <a href="#{{category['id']}}">
+                <div class="block plate hover-trigger">
+                    <img class="rotate180y" src="{{ url_for('static', filename=category['img']) }}" alt="cube" />
+                    <h3>
+                        {{ category['name'] }}
+                    </h3>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% for category in data['categories'] %}
+    <section id="{{category['id']}}_section">
+        <div id="{{category['id']}}" class="anchor"></div>
+        <h2 class="category">
+            {{ category['name'] }}
+            <a href="#category_buttons">
+                <span class="back-button"><i class="fa fa-solid fa-chevron-up"></i></span>
+            </a>
+        </h2>
+        <div class="block">
+            <p>
+                {{ category['desc'] }}
+            </p>
+        </div>
+        {% if category['hasCommands'] %}
+        <h3>
+            Комманды
+            <a href="#category_buttons">
+                <span class="back-button"><i class="fa fa-solid fa-chevron-up"></i></span>
+            </a>
+        </h3>
+        <div id="{{category['id']}}_command_buttons" class="anchor"></div>
+        <div class="plates">
+            {% for command in category['commands'] %}
+            <a href="#{{category['id']}}_{{command['id']}}">
+                <div class="block command hover-trigger" id="{{category['id']}}_{{command['id']}}_button">
+                    <span class="scale120">
+                        {{ command['canonical'] }}
+                    </span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% for command in category['commands'] %}
+        <section id="{{category['id']}}_{{command['id']}}_section">
+            <div id="{{category['id']}}_{{command['id']}}" class="anchor"></div>
+            <h4 class="category">
+                {{ command['canonical'] }}
+                <a href="#{{category['id']}}_command_buttons">
+                    <span class="back-button"><i class="fa fa-solid fa-chevron-up"></i></span>
+                </a>
+            </h4>
+
+
+            <div class="block flex-column">
+                <p>
+                    {{ command['desc'] }}
+                </p>
+                <div id="{{category['id']}}_{{command['id']}}_buttons" class="anchor"></div>
+
+                {% for variation in command['variations'] %}
+                <section id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}_section">
+                    <div id="{{ category['id']}}_{{command['id'] }}_v{{loop.index}}" class="anchor"></div>
+                    <div class="flex-column">
+                        <button class="button-text" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse"
+                            aria-expanded="false"
+                            aria-controls="{{ category['id'] }}_{{ command['id'] }}_v{{loop.index}}_collapse">
+                            {{ variation['cmd'] }}
+                        </button>
+                        <div class="collapse" id="{{ category['id'] }}_{{ command['id'] }}_v{{ loop.index }}_collapse">
+                            <p>
+                                {{ variation['desc'] }}
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+        {% endif %}
+    </section>
+    {% endfor %}
+</div>
+{% endblock %}

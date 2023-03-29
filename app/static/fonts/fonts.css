@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(./Minecraft_Rus/minecraft.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Galiver;
+    src: url(./galiver-sans/GALS.ttf);
+    font-weight: normal;
+    font-style: normal;
+}

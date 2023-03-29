@@ -1,0 +1,243 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    background-image: url(/static/img/bg.png);
+    background-attachment: fixed;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: Manrope;
+    font-weight: 500;
+}
+
+.header {
+    z-index: 255;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #333;
+    top: -1px;
+    margin-top: -1px;
+    width: 100vw;
+    height: 65px;
+    padding: .4em 1em;
+    gap: 1em;
+}
+
+.logo {
+    overflow: hidden;
+    background-color: #0000;
+
+    font-family: Minecraft, serif;
+
+    color: #f2f2f2;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+nav {
+    height: 100%;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    font-family: Minecraft, serif;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    width: max(10vw,6em);
+    height: 100%;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: font-size 300ms;
+    text-decoration: none;
+    color: white;
+}
+
+nav li:hover a {
+    font-size: 1.2em;
+}
+
+.button a, button {
+    transition-property: color, background-color, border;
+    transition-duration: 300ms;
+    display: block;
+    font-family: Minecraft, serif;
+    padding: .8em;
+
+    border: none;
+    border-radius: 10px;
+    color: #42aaff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #FFB542;
+}
+
+.button a:hover, button:hover {
+    background: #42aaff;
+    color: #FFB542;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    color: #42AAFF;
+    font-size: 22px;
+    margin: 5vw;
+    padding: 2em 2em;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 1.1em;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1em;
+    color: #ffb542;
+    text-shadow: 2px 2px 2px #000;
+    font-family: Minecraft, serif;
+}
+
+.tab1 {
+    margin-left: 1em;
+}
+
+.tab2 {
+    margin-left: 2em;
+}
+
+.tab3 {
+    margin-left: 3em;
+}
+
+.points {
+    color: #ffb542;
+    letter-spacing: 0.33em;
+}
+
+.smaller-text {
+    font-size: 0.6em;
+}
+
+p {
+    margin-bottom: .7em;
+}
+
+.anchor {
+    visibility: hidden;
+    margin-top: -10em;
+    padding-top: 10em;
+}
+
+.category {
+    margin-top: 1.5em;
+}
+
+.block {
+    border-radius: 1.5em;
+    display: flex;
+    flex-direction: row;
+    color: #000;
+    background: linear-gradient(45deg, #4fb0ffdb, #008cffdb);
+    padding: 1.5em;
+    gap: 1.5em;
+}
+
+.block img {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.up-button {
+    transition: background-color 0.3s;
+    position: sticky;
+    bottom: 3em;
+    float: right;
+    right: 3em;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+
+    background: #6e6e6e65;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.up-button:hover {
+    background: #b0b0b0dd;
+}
+
+@media screen and (max-width: 600px) {
+    .page-content h1 {
+        font-size: 28px;
+    }
+    
+    .page-content h2 {
+        font-size: 16px;
+    }
+
+    .page-content {
+        font-size: 14px;
+    }
+}

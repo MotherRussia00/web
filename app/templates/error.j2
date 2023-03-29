@@ -1,0 +1,25 @@
+{% extends 'mineice.j2' %}
+
+{% block title %} Ошибка {% endblock %}
+
+{% block navbar %}
+<ul>
+    <li><a href="/">Главная</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="animation-trigger">
+    <h1 class="animation-left" style="margin-top: 200px">Упс что то пошло не так...</h1>
+</div>
+<div class="animation-trigger">
+    <h2 class="animation-left">Ошибка {{ error_code }}</h2>
+</div>
+<div class="animation-trigger">
+    <div class="button animation-left" id="back">
+        <a href="/">
+            <div>На главную</div>
+        </a>
+    </div>
+</div>
+{% endblock %}
