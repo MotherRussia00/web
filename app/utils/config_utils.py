@@ -9,7 +9,7 @@ class ConfigUtils:
 
     @classmethod
     def load_from_config(cls, config_filename: str, type_: str):
-        with open(f"config/{config_filename}.json") as file:
+        with open(f"config/{config_filename}.json", encoding="utf-8") as file:
             info = json.load(file)
         for block in info:
             if block["type"] == type_:
@@ -19,6 +19,6 @@ class ConfigUtils:
     def render_with_config(cls, template_name: str, config_filename: str):
         file = f"config/{config_filename}.yml"
         if settings.DEBUG or file not in cls.cached:
-            with open(file, 'r') as stream:
+            with open(file, 'r', encoding="utf-8") as stream:
                 cls.cached[file] = yaml.safe_load(stream)
         return render_template(template_name, data=cls.cached[file])
