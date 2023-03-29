@@ -33,7 +33,7 @@ categories:
     name: Pvp сервер
     img: fontawesome/svgs/solid/user-ninja.svg
     desc: |
-      Pvp — это сервер на котором ты можешь сразится с другими игроками в cpvp
+      Pvp — это сервер на котором ты можешь сразится с другими игроками в pvp
     hasCommands: yes
     commands:
       - id: /kill
