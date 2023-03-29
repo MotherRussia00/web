@@ -36,7 +36,7 @@ categories:
       Pvp — это сервер на котором ты можешь сразится с другими игроками в pvp
     hasCommands: yes
     commands:
-      - id: /kill
+      - id: kill
         desc: |
           Убивает тебя
         canonical: /kill
@@ -44,15 +44,15 @@ categories:
           - cmd: /suicide
             desc: |
               Убивает тебя
-      - id: /overworld
+      - id: overworld
         desc: |
           Телепортирует тебя на спавн верхнего мира
         canonical: /overworld
-      - id: /nether
+      - id: nether
         desc: |
           Телепортирует тебя на спавн нижнего мира
         canonical: /nether
-      - id: /duel
+      - id: duel
         desc: |
           Команда для начала дуэли с каким либо игроком
         canonical: /duel <Никнейм>
@@ -63,11 +63,11 @@ categories:
       У нас есть дискорд сервер — в нем можно пообщаться с другими игроками на сервере вне зависимости их нахождения на нем и многое другое
     hasCommands: yes
     commands:
-      - id: /minecraft
+      - id: minecraft
         desc: |
           Команда для привязки аккаунта в дискорде к майнкрафту
         canonical: /minecraft <id>
-      - id: /rank
+      - id: rank
         desc: |
           Ваш ранк на сервере, важно привязать дискорд
         canonical: /rank
@@ -75,7 +75,7 @@ categories:
           - cmd: /rank <Игрок>
             desc: |
               Узнать ранк какого либо игрока на сервере
-      - id: /status
+      - id: status
         desc: |
           Показывает количество игроков на сервере
         canonical: /status
