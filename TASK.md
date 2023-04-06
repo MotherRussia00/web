@@ -23,3 +23,5 @@
     * Про пвп
     * Про анархию
     * пример <https://crystalpvp.cc/wiki>
+
+6. Добавить Donation alert API
