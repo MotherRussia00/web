@@ -91,3 +91,9 @@ button:hover {
     color: #FFB542;
     border: solid 5px #FFB542;
 }
+
+@media screen and (max-width: 600px) {
+    #sidebar {
+        display: none;
+    }
+}
