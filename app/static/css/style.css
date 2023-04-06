@@ -234,10 +234,10 @@ a {
     }
     
     .page-content h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
-    .page-content {
-        font-size: 14px;
+    .page-content, .page-content * {
+        font-size: 16px;
     }
 }
