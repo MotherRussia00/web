@@ -1,7 +1,7 @@
 import json
 import yaml
 from flask import render_template
-import settings
+from app import settings
 
 
 class ConfigUtils:

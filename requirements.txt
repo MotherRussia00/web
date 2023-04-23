@@ -1,2 +1,5 @@
 flask~=2.2.2
 PyYAML~=6.0
+YooMoney~=0.1.0
+Flask-WTF~=1.1.1
+WTForms~=3.0.1

@@ -24,4 +24,6 @@
     * Про анархию
     * пример <https://crystalpvp.cc/wiki>
 
-6. Добавить Donation alert API
+6. Добавить Юмани api
+    * Как юзать flask_wtf: <https://github.com/cosm0oo/ETHEREAL-WEB>
+    * Остальное как по кайфу
